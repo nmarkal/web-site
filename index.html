@@ -3,283 +3,462 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZBK İç Mimarlık | Lüks & Modern Tasarım</title>
     
-    <meta name="description" content="ZBK İç Mimarlık, Pembe ve Turuncu renkleriyle modern, derinlikli ve lüks iç mekan tasarımları sunar.">
-    <meta name="keywords" content="iç mimarlık, modern tasarım, lüks mimari, turuncu pembe, ZBK, mimari projeler, maketler">
+    <title>ZBK İç Mimarlık | Lüks & Modern Tasarım Projeleri</title>
+    <meta name="description" content="ZBK İç Mimarlık, Trabzon ve çevresinde lüks, modern iç mekan tasarımları, 3D görselleştirme ve anahtar teslim projeler sunar. Pembe ve turuncu temalı özgün tasarımlar.">
+    <meta name="keywords" content="iç mimarlık, Trabzon, modern tasarım, lüks mimari, turuncu pembe, ZBK, mimari projeler, butik proje, cafe tasarımı">
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
    <script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          // İki ana koyu rengi logonuzdaki en koyu tona eşitleyelim:
-          'zbk-bg': '#0f0f0f',          // EN KOYU Arka Plan
-          'zbk-surface': '#0f0f0f',     // EN KOYU Yüzey Rengi
-          
-          'zbk-primary': '#FF8C00',     // Turuncu (Vurgu)
-          'zbk-secondary': '#FF1493',   // Pembe (Hakim)
-          'zbk-subtle-dark': '#333333', // Ara Ton (Bırakılabilir)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zbk-bg': '#0f0f0f',        // EN KOYU Arka Plan
+                        'zbk-surface': '#0f0f0f',    // Yüzey Rengi
+                        'zbk-primary': '#FF8C00',    // Turuncu (Vurgu)
+                        'zbk-secondary': '#FF1493',  // Pembe (Hakim)
+                        'zbk-subtle-dark': '#333333', // Ara Ton
+                    }
+                }
+            }
         }
-      }
-    }
-  }
-</script>
+    </script>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        body { font-family: 'Montserrat', sans-serif; }
-        .circles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0; opacity: 0.5; filter: blur(1px); }
-        .circles-container li { position: absolute; display: block; list-style: none; background: #FF8C00; animation: floating-circles 40s linear infinite; bottom: -150px; border-radius: 50%; box-shadow: none; }
-        .circles-container li:nth-child(2n) { background: #FF1493; box-shadow: none; }
-        /* Çember Boyutları ve Konumları (Kısaltılmış Kod) */
-        .circles-container li:nth-child(1){ left: 10%; width: 100px; height: 100px; animation-delay: 0s; } .circles-container li:nth-child(2){ left: 35%; width: 40px; height: 40px; animation-delay: 5s; animation-duration: 18s; } .circles-container li:nth-child(3){ left: 50%; width: 150px; height: 150px; animation-delay: 10s; animation-duration: 50s; } .circles-container li:nth-child(4){ left: 70%; width: 60px; height: 60px; animation-delay: 15s; animation-duration: 28s; } .circles-container li:nth-child(5){ left: 90%; width: 20px; height: 20px; animation-delay: 20s; } .circles-container li:nth-child(6){ left: 5%; width: 80px; height: 80px; animation-delay: 25s; animation-duration: 22s; } .circles-container li:nth-child(7){ left: 80%; width: 50px; height: 50px; animation-delay: 30s; } .circles-container li:nth-child(8){ left: 40%; width: 120px; height: 120px; animation-delay: 8s; animation-duration: 40s; } .circles-container li:nth-child(9){ left: 15%; width: 70px; height: 70px; animation-delay: 2s; animation-duration: 35s; } .circles-container li:nth-child(10){ left: 25%; width: 30px; height: 30px; animation-delay: 12s; animation-duration: 14s; } .circles-container li:nth-child(11){ left: 45%; width: 110px; height: 110px; animation-delay: 6s; animation-duration: 45s; } .circles-container li:nth-child(12){ left: 55%; width: 90px; height: 90px; animation-delay: 22s; animation-duration: 20s; } .circles-container li:nth-child(13){ left: 65%; width: 45px; height: 45px; animation-delay: 33s; animation-duration: 16s; } .circles-container li:nth-child(14){ left: 75%; width: 140px; height: 140px; animation-delay: 18s; animation-duration: 60s; } .circles-container li:nth-child(15){ left: 85%; width: 65px; height: 65px; animation-delay: 27s; animation-duration: 25s; } .circles-container li:nth-child(16){ left: 95%; width: 25px; height: 25px; animation-delay: 9s; animation-duration: 12s; } .circles-container li:nth-child(17){ left: 5%; width: 10px; height: 10px; animation-delay: 38s; animation-duration: 10s; } .circles-container li:nth-child(18){ left: 20%; width: 130px; height: 130px; animation-delay: 14s; animation-duration: 55s; } .circles-container li:nth-child(19){ left: 60%; width: 55px; height: 55px; animation-delay: 29s; animation-duration: 30s; } .circles-container li:nth-child(20){ left: 90%; width: 75px; height: 75px; animation-delay: 42s; animation-duration: 42s; }
+    body { font-family: 'Montserrat', sans-serif; }
+    
+    /* BAŞLIK RENGİ İÇİN KESİN ÇÖZÜM SINIFI VE KURALLAR */
+    .gradient-heading, .hero-heading {
+        background-image: linear-gradient(to right, #FF1493, #FF8C00); /* Pembe'den Turuncu'ya */
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        color: transparent !important;
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
 
-        @keyframes floating-circles {
-            0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0; }
-            50% { transform: translateY(-500px) rotate(180deg) scale(0.7); opacity: 0.6; } 
-            100% { transform: translateY(-1000px) rotate(360deg) scale(0); opacity: 0; }
-        }
-    </style>
+    /* ARKA PLAN DAİRELERİNİN TANIMI */
+    .circles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0; opacity: 0.5; filter: blur(1px); }
+    .circles-container li { position: absolute; display: block; list-style: none; background: #FF8C00; animation: floating-circles 40s linear infinite; bottom: -150px; border-radius: 50%; box-shadow: none; }
+    .circles-container li:nth-child(2n) { background: #FF1493; box-shadow: none; }
+    /* Çember Boyutları ve Konumları (Kısaltıldı) */
+    .circles-container li:nth-child(1){ left: 10%; width: 100px; height: 100px; animation-delay: 0s; } .circles-container li:nth-child(2){ left: 35%; width: 40px; height: 40px; animation-delay: 5s; animation-duration: 18s; } .circles-container li:nth-child(3){ left: 50%; width: 150px; height: 150px; animation-delay: 10s; animation-duration: 50s; } .circles-container li:nth-child(4){ left: 70%; width: 60px; height: 60px; animation-delay: 15s; animation-duration: 28s; } .circles-container li:nth-child(5){ left: 90%; width: 20px; height: 20px; animation-delay: 20s; } .circles-container li:nth-child(6){ left: 5%; width: 80px; height: 80px; animation-delay: 25s; animation-duration: 22s; } .circles-container li:nth-child(7){ left: 80%; width: 50px; height: 50px; animation-delay: 30s; } .circles-container li:nth-child(8){ left: 40%; width: 120px; height: 120px; animation-delay: 8s; animation-duration: 40s; } .circles-container li:nth-child(9){ left: 15%; width: 70px; height: 70px; animation-delay: 2s; animation-duration: 35s; } .circles-container li:nth-child(10){ left: 25%; width: 30px; height: 30px; animation-delay: 12s; animation-duration: 14s; } .circles-container li:nth-child(11){ left: 45%; width: 110px; height: 110px; animation-delay: 6s; animation-duration: 45s; } .circles-container li:nth-child(12){ left: 55%; width: 90px; height: 90px; animation-delay: 22s; animation-duration: 20s; } .circles-container li:nth-child(13){ left: 65%; width: 45px; height: 45px; animation-delay: 33s; animation-duration: 16s; } .circles-container li:nth-child(14){ left: 75%; width: 140px; height: 140px; animation-delay: 18s; animation-duration: 60s; } .circles-container li:nth-child(15){ left: 85%; width: 65px; height: 65px; animation-delay: 27s; animation-duration: 25s; } .circles-container li:nth-child(16){ left: 95%; width: 25px; height: 25px; animation-delay: 9s; animation-duration: 12s; } .circles-container li:nth-child(17){ left: 5%; width: 10px; height: 10px; animation-delay: 38s; animation-duration: 10s; } .circles-container li:nth-child(18){ left: 20%; width: 130px; height: 130px; animation-delay: 14s; animation-duration: 55s; } .circles-container li:nth-child(19){ left: 60%; width: 55px; height: 55px; animation-delay: 29s; animation-duration: 30s; } .circles-container li:nth-child(20){ left: 90%; width: 75px; height: 75px; animation-delay: 42s; animation-duration: 42s; }
+
+    @keyframes floating-circles {
+        0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0; }
+        50% { transform: translateY(-500px) rotate(180deg) scale(0.7); opacity: 0.6; }
+        100% { transform: translateY(-1000px) rotate(360deg) scale(0); opacity: 0; }
+    }
+    
+</style>
 </head>
-<body class="bg-zbk-bg text-zbk-text antialiased min-h-screen relative">
+<body style="background-color: #F7F0E8;" class="text-gray-900">
     
     <ul class="circles-container">
         <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
         <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
     </ul>
 
-<header class="sticky top-0 z-50 bg-zbk-surface shadow-xl flex flex-col sm:flex-row justify-between items-center px-5 py-4 lg:px-10">
-    
-    <a href="#hero" class="flex items-center space-x-2"> 
-        <img src="logo.png.jfif" alt="ZBK İç Mimarlık Logo" class="h-12 w-auto"> 
-        
+<header class="sticky top-0 z-50 shadow-xl flex flex-col sm:flex-row justify-between items-center px-5 py-2 lg:px-10 bg-[#F7F0E8]">
+    <a href="#hero" class="flex items-center space-x-2">
+        <img src="logo.png.png" alt="ZBK İç Mimarlık Logo" class="h-24 w-auto">
         <span class="text-3xl font-extrabold bg-gradient-to-tr from-zbk-secondary to-zbk-primary text-transparent bg-clip-text">ZBK İç Mimarlık</span>
     </a>
     
-    <nav class="mt-3 sm:mt-0">
-        <ul class="flex space-x-6 list-none text-lg">
-            <li><a href="#projeler" class="text-zbk-secondary transition duration-300 hover:border-b-2 hover:border-zbk-primary pb-1 hover:bg-gradient-to-r hover:from-zbk-secondary hover:to-zbk-primary hover:text-transparent hover:bg-clip-text">Projeler</a></li>
-            <li><a href="#maketler" class="text-zbk-secondary transition duration-300 hover:border-b-2 hover:border-zbk-primary pb-1 hover:bg-gradient-to-r hover:from-zbk-secondary hover:to-zbk-primary hover:text-transparent hover:bg-clip-text">Maketler</a></li>
-            <li><a href="#hizmetler" class="text-zbk-secondary transition duration-300 hover:border-b-2 hover:border-zbk-primary pb-1 hover:bg-gradient-to-r hover:from-zbk-secondary hover:to-zbk-primary hover:text-transparent hover:bg-clip-text">Hizmetler</a></li>
-            <li><a href="#iletisim" class="text-zbk-secondary transition duration-300 hover:border-b-2 hover:border-zbk-primary pb-1 hover:bg-gradient-to-r hover:from-zbk-secondary hover:to-zbk-primary hover:text-transparent hover:bg-clip-text">İletişim</a></li>
-        </ul>
-    </nav>
+   <nav class="mt-3 sm:mt-0">
+    <ul class="flex space-x-6 list-none text-lg">
+        <li><a href="#about" class="text-zbk-secondary transition duration-300 hover:border-b-2 hover:border-zbk-primary pb-1 hover:bg-gradient-to-r hover:from-zbk-secondary hover:to-zbk-primary hover:text-transparent hover:bg-clip-text">Hakkımızda</a></li>
+        
+        <li><a href="#projeler" class="text-zbk-secondary transition duration-300 hover:border-b-2 hover:border-zbk-primary pb-1 hover:bg-gradient-to-r hover:from-zbk-secondary hover:to-zbk-primary hover:text-transparent hover:bg-clip-text">Projeler</a></li>
+        <li><a href="#maketler" class="text-zbk-secondary transition duration-300 hover:border-b-2 hover:border-zbk-primary pb-1 hover:bg-gradient-to-r hover:from-zbk-secondary hover:to-zbk-primary hover:text-transparent hover:bg-clip-text">Maketler</a></li>
+        <li><a href="#hizmetler" class="text-zbk-secondary transition duration-300 hover:border-b-2 hover:border-zbk-primary pb-1 hover:bg-gradient-to-r hover:from-zbk-secondary hover:to-zbk-primary hover:text-transparent hover:bg-clip-text">Hizmetler</a></li>
+        <li><a href="#iletisim" class="text-zbk-secondary transition duration-300 hover:border-b-2 hover:border-zbk-primary pb-1 hover:bg-gradient-to-r hover:from-zbk-secondary hover:to-zbk-primary hover:text-transparent hover:bg-clip-text">İletişim</a></li>
+    </ul>
+</nav>
 </header>
 
- <section id="hero" class="relative z-10 flex flex-col justify-center items-center text-center min-h-[90vh] px-5 border-b-8 border-zbk-secondary"
-        style="background: linear-gradient(135deg, rgba(255, 140, 0, 0.1), rgba(255, 20, 147, 0.1)), #000000;">
-       
-    <div class="max-w-4xl mx-auto"> 
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-wider"
-            style="background-image: linear-gradient(90deg, #FF1493, #FF8C00); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-            Mekanlara Karakter Katıyoruz.
-        </h1>
-        
-        <p class="text-xl mt-4 text-zbk-primary">Estetik ve fonksiyonun buluşma noktası: ZBK İç Mimarlık.</p>
-        <a href="#iletisim" class="mt-12 inline-block py-3 px-8 rounded-md font-bold text-zbk-bg bg-zbk-secondary hover:bg-zbk-primary transition duration-300 transform hover:scale-105 shadow-2xl">
-            Ücretsiz Keşif Teklifi Alın
-        </a>
-    </div>     </section>
+<section id="hero" class="relative z-10 flex flex-col justify-center items-center text-center py-32 px-5 border-b-8 border-zbk-secondary" 
+        style="background: linear-gradient(135deg, rgba(255, 140, 0, 0.3), rgba(255, 20, 147, 0.3)), #F7F0E8;">
+    <div class="max-w-4xl mx-auto">
+        
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-wider hero-heading text-gray-900">
+            Mekanlara Karakter Katıyoruz.
+        </h1>
+        
+        <p class="text-xl mt-4 text-gray-800">Estetik ve fonksiyonun buluşma noktası: ZBK İç Mimarlık.</p>
+        
+        <a href="#iletisim" class="mt-12 inline-block py-3 px-8 rounded-md font-bold text-zbk-bg bg-zbk-secondary hover:bg-zbk-primary transition duration-300 transform hover:scale-105 shadow-2xl">
+     Ücretsiz Keşif Teklifi Alın
+</a>
+    </div>
+</section>
+<section id="about" class="relative z-10 py-24 px-5">
+    <div class="max-w-4xl mx-auto text-center">
+        
+        <h2 class="text-5xl font-bold mb-12 relative gradient-heading
+                    after:content-[''] after:absolute after:w-1/4 after:h-1 after:bg-zbk-primary after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2">
+            Hakkımızda
+        </h2>
 
-<section id="projeler" class="relative z-10 py-24 px-5 border-b-2 border-zbk-subtle-dark">
+        <p class="text-xl font-medium text-gray-800 mb-8">
+            ZBK İç Mimarlık olarak, mimari tasarımdan iç mekan uygulamalarına, yapım–onarım projelerinden mekanik ve inşaat işlerine kadar geniş bir yelpazede profesyonel hizmet sunuyoruz. Tasarım anlayışımızı estetik, işlevsellik ve teknik doğruluk üzerine kuruyor; her projeyi kendi kimliği ve ihtiyaçları doğrultusunda şekillendiriyoruz. Konsept geliştirme, proje çizimi, modelleme, maket tasarımı ve uygulama süreçlerinde detaylı, çözüm odaklı ve yenilikçi bir yaklaşım benimsiyoruz. Trabzon ve Ankara merkezli ekibimiz, Türkiye’nin her noktasına ulaşarak nitelikli ve güvenilir projelere imza atmaktadır. Modern çizgilerle geleneksel dokuyu buluşturan tasarımlarımızla, mekanlara karakter katan kalıcı çözümler üretmeyi amaçlıyoruz. Her ölçekte projede, hem bireysel hem kurumsal ihtiyaçlara uygun, sürdürülebilir ve yaratıcı çalışmalar ortaya koyuyoruz.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-6 mt-12">
+            
+            <div class="w-full sm:w-1/2 lg:w-1/4 p-4 rounded-lg bg-white shadow-md border-t-4 border-zbk-secondary">
+                <i class="fas fa-lightbulb text-3xl mb-3 gradient-heading"></i>
+                <h4 class="text-lg font-bold text-gray-900">Yaratıcılık</h4>
+                <p class="text-sm text-gray-700 mt-1">Sınırları zorlayan, özgün tasarımlar.</p>
+            </div>
+            
+            <div class="w-full sm:w-1/2 lg:w-1/4 p-4 rounded-lg bg-white shadow-md border-t-4 border-zbk-secondary">
+                <i class="fas fa-handshake text-3xl mb-3 gradient-heading"></i>
+                <h4 class="text-lg font-bold text-gray-900">Güvenilirlik</h4>
+                <p class="text-sm text-gray-700 mt-1">Söz verdiğimiz gibi, zamanında ve eksiksiz teslimat.</p>
+            </div>
+            
+            <div class="w-full sm:w-1/2 lg:w-1/4 p-4 rounded-lg bg-white shadow-md border-t-4 border-zbk-secondary">
+                <i class="fas fa-eye text-3xl mb-3 gradient-heading"></i>
+                <h4 class="text-lg font-bold text-gray-900">Detay Odaklılık</h4>
+                <p class="text-sm text-gray-700 mt-1">Her milimetre karede mükemmellik arayışı.</p>
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+<section id="projeler" class="relative z-10 py-24 px-5">
     
-    <h2 class="text-5xl font-bold mb-12 relative inline-block after:content-[''] after:absolute after:w-1/3 after:h-1 after:bg-zbk-primary after:bottom-[-15px] after:left-1/3 
-               bg-gradient-to-r from-zbk-secondary to-zbk-primary text-transparent bg-clip-text">Projelerimiz</h2>
+    <h2 class="text-5xl font-bold mb-16 relative gradient-heading after:content-[''] after:absolute after:w-1/4 after:h-1 after:bg-zbk-primary after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2">Projelerimiz</h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 border-b-2 border-zbk-subtle-dark pb-12">  <div id="proje-1-trigger" class="proje-trigger h-64 rounded-lg border border-zbk-secondary  shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden group"style="background-image: url('proje-1.jpg'); background-size: cover; background-position: center;"> <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition duration-500 flex items-end p-5">
+ <span class="text-xl font-bold text-zbk-primary relative z-10">Tahran Caddesi Cafe Tasarımı</span>
+ </div>
+ </div>
+ <div id="proje-2-trigger" class="proje-trigger h-64 rounded-lg border border-zbk-secondary  shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden group"
+style="background-image: url('proje-2.jpg'); background-size: cover; background-position: center;"> <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition duration-500 flex items-end p-5"> <span class="text-xl font-bold text-zbk-primary relative z-10">Butik Projesi</span> </div>
+ </div>
+
+ <div id="proje-3-trigger" class="proje-trigger h-64 rounded-lg border border-zbk-subtle-dark shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden group"
+style="background-image: url('proje-3.jpg'); background-size: cover; background-position: center;">
+ <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition duration-500 flex items-end p-5">
+ <span class="text-xl font-bold text-zbk-primary relative z-10">Restorasyon Projesi Otel</span>
+ </div> </div>
+<div id="proje-4-trigger" class="proje-trigger h-64 rounded-lg border border-zbk-subtle-dark shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden group"
+style="background-image: url('proje-4.jpg'); background-size: cover; background-position: center;">
+ <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition duration-500 flex items-end p-5">
+ <span class="text-xl font-bold text-zbk-primary relative z-10">Çağrı Merkezi Tasarımı</span> </div>
+</div>
+ <div id="proje-5-trigger" class="proje-trigger h-64 rounded-lg border border-zbk-subtle-dark  shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden group"
+style="background-image: url('proje-5.jpg'); background-size: cover; background-position: center;">
+ <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition duration-500 flex items-end p-5">
+ <span class="text-xl font-bold text-zbk-primary relative z-10">Endüstriyel Ürün Tasarımı</span>
+</div>
+ </div>
+ <div id="proje-6-trigger" class="proje-trigger h-64 rounded-lg border border-zbk-subtle-dark shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden group"
+style="background-image: url('proje-6.jpg'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition duration-500 flex items-end p-5">
+ <span class="text-xl font-bold text-zbk-primary relative z-10">Aksesuar Tasarımı</span>
+ </div>
+</div>
+ </div> 
+</section> 
+
+<section id="proje-1-detay" class="relative z-10 py-12 px-5 border-b-2 border-zbk-secondary hidden-butik" style="background-color: #F7F0E8;">
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <div class="h-64 rounded-lg border border-zbk-subtle-dark shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden group"
-             style="background-image: url('proje-1.jpg'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition duration-500 flex items-end p-5">
-                 <span class="text-xl font-bold text-zbk-primary relative z-10">Tahran Caddesi Uygulama Oteli Cafe Tasarımı</span>
-            </div>
+    <div class="max-w-6xl mx-auto">
+        <h3 class="text-3xl font-bold mb-8 text-center text-zbk-primary">Tahran Caddesi Cafe Görselleri</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-1.jpg.jfif" alt="Cafe Görsel 1" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-2.jpg.jfif" alt="Cafe Görsel 2" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-3.jpg.jfif" alt="Cafe Görsel 3" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-4.jpg.jfif" alt="Cafe Görsel 4" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-5.jpg.jfif" alt="Cafe Görsel 5" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-6.jpg.jfif" alt="Cafe Görsel 6" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-7.jpg.jfif" alt="Cafe Görsel 7" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-8.jpg.jfif" alt="Cafe Görsel 8" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-9.jpg.jfif" alt="Cafe Görsel 9" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-10.jpg.jfif" alt="Cafe Görsel 10" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-11.jpg.jfif" alt="Cafe Görsel 11" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-12.jpg.jfif" alt="Cafe Görsel 12" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-13.jpg.jfif" alt="Cafe Görsel 13" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-14.jpg.jfif" alt="Cafe Görsel 14" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-15.jpg.jfif" alt="Cafe Görsel 15" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-16.jpg.jfif" alt="Cafe Görsel 16" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-17.jpg.jfif" alt="Cafe Görsel 17" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="tahran-18.jpg.jfif" alt="Cafe Görsel 18" class="w-full h-full object-cover"></div>
         </div>
+</section>
+<section id="proje-2-detay" class="relative z-10 py-12 px-5 border-b-2 border-zbk-secondary hidden-butik" style="background-color: #F7F0E8;">
+    
+    <div class="max-w-6xl mx-auto">
+        <h3 class="text-3xl font-bold mb-8 text-center text-zbk-secondary">Butik Projesi Detaylı Görseller</h3>
         
-        <div class="h-64 rounded-lg border border-zbk-subtle-dark shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden group"
-             style="background-image: url('proje-2.jpg'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition duration-500 flex items-end p-5">
-                 <span class="text-xl font-bold text-zbk-primary relative z-10">Restorasyon Projesi Butik Otel Bar</span>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="h-80 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="butik-1.jpg.jfif" alt="Butik Projesi Görseli 1" class="w-full h-full object-cover"></div>
+            <div class="h-80 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="butik-2.jpg.jfif" alt="Butik Projesi Görseli 2" class="w-full h-full object-cover"></div>
+            <div class="h-80 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="butik-3.jpg.jfif" alt="Butik Projesi Görseli 3" class="w-full h-full object-cover"></div>
+            <div class="h-80 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="butik-4.jpg.jfif" alt="Butik Projesi Görseli 4" class="w-full h-full object-cover"></div>
         </div>
-        
-        <div class="h-64 rounded-lg border border-zbk-subtle-dark shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden group"
-             style="background-image: url('proje-3.jpg'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition duration-500 flex items-end p-5">
-                 <span class="text-xl font-bold text-zbk-primary relative z-10">Çağrı Merkezi</span>
-            </div>
+    </div>
+</section>
+<section id="proje-3-detay" class="relative z-10 py-12 px-5 border-b-2 border-zbk-secondary hidden-butik" style="background-color: #F7F0E8;">
+    
+    <div class="max-w-6xl mx-auto">
+        <h3 class="text-3xl font-bold mb-8 text-center text-zbk-primary">Restorasyon Otel Projesi Görselleri</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-1.jpg.jfif" alt="Otel Cafe Görsel 1" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-2.jpg.jfif" alt="Otel Cafe Görsel 2" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-3.jpg.jfif" alt="Otel Cafe Görsel 3" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-4.jpg.jfif" alt="Otel Cafe Görsel 4" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-5.jpg.jfif" alt="Otel Cafe Görsel 5" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-6.jpg.jfif" alt="Otel Cafe Görsel 6" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-7.jpg.jfif" alt="Otel Cafe Görsel 7" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-8.jpg.jfif" alt="Otel Cafe Görsel 8" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-9.jpg.jfif" alt="Otel Cafe Görsel 9" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-10.jpg.jfif" alt="Otel Cafe Görsel 10" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-11.jpg.jfif" alt="Otel Cafe Görsel 11" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-12.jpg.jfif" alt="Otel Cafe Görsel 12" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-13.jpg.jfif" alt="Otel Cafe Görsel 13" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-14.jpg.jfif" alt="Otel Cafe Görsel 14" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-15.jpg.jfif" alt="Otel Cafe Görsel 15" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-16.jpg.jfif" alt="Otel Cafe Görsel 16" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-17.jpg.jfif" alt="Otel Cafe Görsel 17" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-18.jpg.jfif" alt="Otel Cafe Görsel 18" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-19.jpg.jfif" alt="Otel Cafe Görsel 19" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-20.jpg.jfif" alt="Otel Cafe Görsel 20" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-21.jpg.jfif" alt="Otel Cafe Görsel 21" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-22.jpg.jfif" alt="Otel Cafe Görsel 22" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-23.jpg.jfif" alt="Otel Cafe Görsel 23" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="Otel-24.jpg.jfif" alt="Otel Cafe Görsel 24" class="w-full h-full object-cover"></div>
         </div>
-        
-        <div class="h-64 rounded-lg border border-zbk-subtle-dark shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden group"
-             style="background-image: url('proje-4.jpg'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition duration-500 flex items-end p-5">
-                 <span class="text-xl font-bold text-zbk-primary relative z-10">Butik</span>
-            </div>
+    </div>
+</section>
+
+<section id="proje-4-detay" class="relative z-10 py-12 px-5 border-b-2 border-zbk-secondary hidden-butik" style="background-color: #F7F0E8;">
+   
+    <div class="max-w-6xl mx-auto">
+        <h3 class="text-3xl font-bold mb-8 text-center text-zbk-primary">Çağrı Merkezi Projesi Görselleri</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="cagri-merkezi-1.jpg.jfif" alt="Çağrı Merkezi Görsel 1" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="cagri-merkezi-2.jpg.jfif" alt="Çağrı Merkezi Görsel 2" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="cagri-merkezi-3.jpg.jfif" alt="Çağrı Merkezi Görsel 3" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="cagri-merkezi-4.jpg.jfif" alt="Çağrı Merkezi Görsel 1" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="cagri-merkezi-5.jpg.jfif" alt="Çağrı Merkezi Görsel 2" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="cagri-merkezi-6.jpg.jfif" alt="Çağrı Merkezi Görsel 3" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="cagri-merkezi-7.jpg.jfif" alt="Çağrı Merkezi Görsel 1" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="cagri-merkezi-8.jpg.jfif" alt="Çağrı Merkezi Görsel 2" class="w-full h-full object-cover"></div>
         </div>
-        
-        <div class="h-64 rounded-lg border border-zbk-subtle-dark shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden group"
-             style="background-image: url('proje-5.jpg'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition duration-500 flex items-end p-5">
-                 <span class="text-xl font-bold text-zbk-primary relative z-10">Endüstriyel Ürün Tasarımı</span>
-            </div>
+    </div>
+</section>
+
+<section id="proje-5-detay" class="relative z-10 py-12 px-5 border-b-2 border-zbk-secondary hidden-butik" style="background-color: #F7F0E8;">
+    
+    <div class="max-w-6xl mx-auto">
+        <h3 class="text-3xl font-bold mb-8 text-center text-zbk-primary">Endüstriyel Ürün Projesi Görselleri</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="endustriyel-1.jpg.jfif" alt="Endüstriyel Görsel 1" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="endustriyel-2.jpg.jfif" alt="Endüstriyel Görsel 2" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="endustriyel-3.jpg.jfif" alt="Endüstriyel Görsel 1" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="endustriyel-4.jpg.jfif" alt="Endüstriyel Görsel 2" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="endustriyel-5.jpg.jfif" alt="Endüstriyel Görsel 1" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="endustriyel-6.jpg.jfif" alt="Endüstriyel Görsel 2" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="endustriyel-7.jpg.jfif" alt="Endüstriyel Görsel 1" class="w-full h-full object-cover"></div>
+            <div class="h-72 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="endustriyel-8.jpg.jfif" alt="Endüstriyel Görsel 2" class="w-full h-full object-cover"></div>
         </div>
-        
-        <div class="h-64 rounded-lg border border-zbk-subtle-dark shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden group"
-             style="background-image: url('proje-6.jpg'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition duration-500 flex items-end p-5">
-                 <span class="text-xl font-bold text-zbk-primary relative z-10">Aksesuar Tasarımı</span>
-            </div>
+    </div>
+</section>
+
+<section id="proje-6-detay" class="relative z-10 py-12 px-5 border-b-2 border-zbk-secondary hidden-butik" style="background-color: #F7F0E8;">
+    
+    <div class="max-w-6xl mx-auto">
+        <h3 class="text-3xl font-bold mb-8 text-center text-zbk-primary">Aksesuar Tasarımı Görselleri</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="aksesuar-1.jpg.jfif" alt="Aksesuar Görsel 1" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="aksesuar-2.jpg.jfif" alt="Aksesuar Görsel 2" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-primary"><img src="aksesuar-3.jpg.jfif" alt="Aksesuar Görsel 3" class="w-full h-full object-cover"></div>
         </div>
-        
     </div>
 </section>
 <section id="maketler" class="relative z-10 py-24 px-5 border-b-2 border-zbk-subtle-dark">
     
-    <h2 class="text-5xl font-bold mb-12 relative inline-block after:content-[''] after:absolute after:w-1/3 after:h-1 after:bg-zbk-primary after:bottom-[-15px] after:left-1/3 
-               bg-gradient-to-r from-zbk-secondary to-zbk-primary text-transparent bg-clip-text">Maketler & Konsept Çalışmaları</h2>
+    <h2 class="text-5xl font-bold mb-16 relative gradient-heading
+                after:content-[''] after:absolute after:w-1/4 after:h-1 after:bg-zbk-primary after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2">Maketler</h2>
     
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <div class="bg-zbk-surface h-64 flex items-end p-5 rounded-lg border border-zbk-subtle-dark shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden">
-            <span class="text-xl font-bold text-zbk-primary">3D Görselleştirme</span>
-        </div>
-        
-        <div class="bg-zbk-surface h-64 flex items-end p-5 rounded-lg border border-zbk-subtle-dark shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden">
-            <span class="text-xl font-bold text-zbk-primary">Fiziksel Model Maket</span>
-        </div>
-        
-        <div class="bg-zbk-surface h-64 flex items-end p-5 rounded-lg border border-zbk-subtle-dark shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden">
-            <span class="text-xl font-bold text-zbk-primary">Malzeme Seçimi ve Sunumu</span>
+    <div class="flex justify-center"> 
+        <div id="maket-1-trigger" class="proje-trigger h-64 w-full max-w-md rounded-lg border border-zbk-subtle-dark shadow-lg hover:border-zbk-primary transition duration-500 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden group"
+             style="background-image: url('maket-1-kapak.jpg'); background-size: cover; background-position: center;">
+            
+            <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition duration-500 flex items-end p-5">
+                <span class="text-xl font-bold text-zbk-primary relative z-10">Fiziksel Model Maket</span>
+            </div>
         </div>
         
     </div>
 </section>
-
-    <section id="hizmetler" class="relative z-10 py-24 px-5 border-b-2 border-zbk-subtle-dark">
-    
-    <h2 class="text-5xl font-bold mb-12 relative inline-block after:content-[''] after:absolute after:w-1/3 after:h-1 after:bg-zbk-primary after:bottom-[-15px] after:left-1/3
-           bg-gradient-to-r from-zbk-secondary to-zbk-primary text-transparent bg-clip-text">Sunduğumuz Hizmetler</h2>
-    
-    <ul class="max-w-3xl mx-auto list-none text-lg">
-        
-        <li class="bg-zbk-surface mb-4 p-4 rounded-md border-l-4 border-zbk-secondary hover:border-zbk-primary hover:bg-zbk-bg transition duration-300">
-            <span class="bg-gradient-to-r from-zbk-secondary to-zbk-primary text-transparent bg-clip-text font-bold">Tasarım ve Konsept Geliştirme</span>
-        </li>
-        
-        <li class="bg-zbk-surface mb-4 p-4 rounded-md border-l-4 border-zbk-secondary hover:border-zbk-primary hover:bg-zbk-bg transition duration-300">
-            <span class="bg-gradient-to-r from-zbk-secondary to-zbk-primary text-transparent bg-clip-text font-bold">Uygulama Projeleri ve Detay Çizimleri</span>
-        </li>
-        
-        <li class="bg-zbk-surface mb-4 p-4 rounded-md border-l-4 border-zbk-secondary hover:border-zbk-primary hover:bg-zbk-bg transition duration-300">
-            <span class="bg-gradient-to-r from-zbk-secondary to-zbk-primary text-transparent bg-clip-text font-bold">Şantiye Kontrolü ve Yönetimi</span>
-        </li>
-        
-        <li class="bg-zbk-surface mb-4 p-4 rounded-md border-l-4 border-zbk-secondary hover:border-zbk-primary hover:bg-zbk-bg transition duration-300">
-            <span class="bg-gradient-to-r from-zbk-secondary to-zbk-primary text-transparent bg-clip-text font-bold">Aydınlatma ve Akustik Danışmanlığı</span>
-        </li>
-        
-    </ul>
+<section id="maket-1-detay" class="relative z-10 py-12 px-5 border-b-2 border-zbk-secondary hidden-butik" style="background-color: #F7F0E8;">
+   
+    <div class="max-w-6xl mx-auto">
+        <h3 class="text-3xl font-bold mb-8 text-center text-zbk-secondary">Fiziksel Model Maket Görselleri</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-1.jpg.jfif" alt="Maket Görseli 1" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-2.jpg.jfif" alt="Maket Görseli 2" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-3.jpg.jfif" alt="Maket Görseli 3" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-4.jpg.jfif" alt="Maket Görseli 4" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-5.jpg.jfif" alt="Maket Görseli 5" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-6.jpg.jfif" alt="Maket Görseli 6" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-7.jpg.jfif" alt="Maket Görseli 7" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-8.jpg.jfif" alt="Maket Görseli 8" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-9.jpg.jfif" alt="Maket Görseli 9" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-10.jpg.jfif" alt="Maket Görseli 10" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-11.jpg.jfif" alt="Maket Görseli 11" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-12.jpg.jfif" alt="Maket Görseli 12" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-13.jpg.jfif" alt="Maket Görseli 13" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-14.jpg.jfif" alt="Maket Görseli 14" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-15.jpg.jfif" alt="Maket Görseli 15" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-16.jpg.jfif" alt="Maket Görseli 16" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-17.jpg.jfif" alt="Maket Görseli 17" class="w-full h-full object-cover"></div>
+            <div class="h-64 rounded-lg shadow-xl overflow-hidden border-2 border-zbk-secondary"><img src="maket-18.jpg.jfif" alt="Maket Görseli 18" class="w-full h-full object-cover"></div>
+        </div>
+        <p class="text-white/80 text-lg mt-8 max-w-4xl mx-auto text-center">Fiziksel model maket çalışmalarımız, projenin hacmini ve dokusunu en iyi şekilde sunmak için titizlikle hazırlanmıştır.</p>
+    </div>
 </section>
 
-    <section id="iletisim" class="relative z-10 py-24 px-5 text-center">
-        <h2 class="text-5xl font-bold text-zbk-secondary mb-12 relative inline-block after:content-[''] after:absolute after:w-1/3 after:h-1 after:bg-zbk-primary after:bottom-[-15px] after:left-1/3">Bize Ulaşın</h2>
-        <p class="text-lg text-white/80 mb-8">Hayalinizdeki mekanı gerçeğe dönüştürmek için ilk adımı atın.</p>
-        
-        <form id="contactForm" class="max-w-lg mx-auto p-8 bg-zbk-surface rounded-lg shadow-2xl border border-zbk-secondary">
-            <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required class="w-full p-3 mb-5 border border-zbk-subtle-dark rounded-md bg-zbk-bg text-white focus:border-zbk-primary focus:ring-1 focus:ring-zbk-primary transition duration-300 outline-none">
-            <input type="email" id="email" name="email" placeholder="E-posta Adresiniz" required class="w-full p-3 mb-5 border border-zbk-subtle-dark rounded-md bg-zbk-bg text-white focus:border-zbk-primary focus:ring-1 focus:ring-zbk-primary transition duration-300 outline-none">
-            <textarea id="message" name="message" rows="5" placeholder="Projenizden bahsedin..." required class="w-full p-3 mb-5 border border-zbk-subtle-dark rounded-md bg-zbk-bg text-white focus:border-zbk-primary focus:ring-1 focus:ring-zbk-primary transition duration-300 outline-none"></textarea>
-            <button type="submit" class="w-full py-3 px-8 rounded-md font-bold text-zbk-bg bg-zbk-primary hover:bg-zbk-secondary transition duration-300 transform hover:scale-[1.02] shadow-xl">
-                Mesaj Gönder
-            </button>
-            <p id="form-message" class="text-center mt-4"></p>
-        </form>
 
-        <address class="mt-12 text-center text-white/80">
-            <p class="mb-2"><strong>Adres:</strong>Söğütlü Mah. Bilge Cad. No:2 D:1 Söğütlü/Trabzon</p> 
-            <p><strong>Telefon:</strong>0 (532) 137 23 43</p>
-        </address>
-    </section>
+<section id="hizmetler" class="relative z-10 py-24 px-5 border-b-2 border-zbk-subtle-dark">
+    
+    <h2 class="text-5xl font-bold mb-16 relative gradient-heading
+            after:content-[''] after:absolute after:w-1/4 after:h-1 after:bg-zbk-primary after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2">Sunduğumuz Hizmetler</h2>
+    
+    <ul class="max-w-3xl mx-auto list-none text-lg">
+    
+    <li class="mb-4 p-4 rounded-md border-l-4 border-zbk-secondary hover:border-zbk-primary hover:bg-gray-100 transition duration-300">
+        <span class="bg-gradient-to-r from-zbk-secondary to-zbk-primary text-transparent bg-clip-text font-bold">Tasarım ve Konsept Geliştirme</span>
+    </li>
+    
+    <li class="mb-4 p-4 rounded-md border-l-4 border-zbk-secondary hover:border-zbk-primary hover:bg-gray-100 transition duration-300">
+        <span class="bg-gradient-to-r from-zbk-secondary to-zbk-primary text-transparent bg-clip-text font-bold">Uygulama Projeleri ve Detay Çizimleri</span>
+    </li>
+    
+    <li class="mb-4 p-4 rounded-md border-l-4 border-zbk-secondary hover:border-zbk-primary hover:bg-gray-100 transition duration-300">
+        <span class="bg-gradient-to-r from-zbk-secondary to-zbk-primary text-transparent bg-clip-text font-bold">Şantiye Kontrolü ve Yönetimi</span>
+    </li>
+    
+    <li class="mb-4 p-4 rounded-md border-l-4 border-zbk-secondary hover:border-zbk-primary hover:bg-gray-100 transition duration-300">
+        <span class="bg-gradient-to-r from-zbk-secondary to-zbk-primary text-transparent bg-clip-text font-bold">Aydınlatma ve Akustik Danışmanlığı</span>
+    </li>
+    <li class="mb-4 p-4 rounded-md border-l-4 border-zbk-secondary hover:border-zbk-primary hover:bg-gray-100 transition duration-300">
+        <span class="bg-gradient-to-r from-zbk-secondary to-zbk-primary text-transparent bg-clip-text font-bold">Yapım-Onarım</span>
+    </li>
+    
+    <li class="mb-4 p-4 rounded-md border-l-4 border-zbk-secondary hover:border-zbk-primary hover:bg-gray-100 transition duration-300">
+        <span class="bg-gradient-to-r from-zbk-secondary to-zbk-primary text-transparent bg-clip-text font-bold">İç-Dış Cephe Onarımı</span>
+    </li>
+    
+    <li class="mb-4 p-4 rounded-md border-l-4 border-zbk-secondary hover:border-zbk-primary hover:bg-gray-100 transition duration-300">
+        <span class="bg-gradient-to-r from-zbk-secondary to-zbk-primary text-transparent bg-clip-text font-bold">Restorasyon</span>
+    </li>
+</ul>
+</section>
 
-    <footer class="bg-zbk-subtle-dark border-t-4 border-zbk-secondary py-6 text-center text-gray-400 text-sm">
+<section id="iletisim" class="relative z-10 py-24 px-5 text-center">
+    <h2 class="text-5xl font-bold text-zbk-secondary mb-12 relative inline-block after:content-[''] after:absolute after:w-1/3 after:h-1 after:bg-zbk-primary after:bottom-[-15px] after:left-1/3">Bize Ulaşın</h2>
+    <p class="text-lg text-gray-800 mb-8">Hayalinizdeki mekanı gerçeğe dönüştürmek için ilk adımı atın.</p>
+    
+    <form id="contactForm" class="max-w-lg mx-auto p-8 rounded-lg shadow-2xl border border-zbk-secondary bg-[#F7F0E8] text-gray-900">
+        <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required class="w-full p-3 mb-5 border border-gray-400 rounded-md bg-white text-gray-900 focus:border-zbk-primary focus:ring-1 focus:ring-zbk-primary transition duration-300 outline-none">
+        <input type="email" id="email" name="email" placeholder="E-posta Adresiniz" required class="w-full p-3 mb-5 border border-gray-400 rounded-md bg-white text-gray-900 focus:border-zbk-primary focus:ring-1 focus:ring-zbk-primary transition duration-300 outline-none">
+        <textarea id="message" name="message" placeholder="Projenizden bahsedin..." rows="4" required class="w-full p-3 mb-5 border border-gray-400 rounded-md bg-white text-gray-900 focus:border-zbk-primary focus:ring-1 focus:ring-zbk-primary transition duration-300 outline-none"></textarea>
+        <button type="submit" class="w-full py-3 px-8 rounded-md font-bold text-zbk-bg bg-zbk-secondary hover:bg-zbk-primary transition duration-300 transform hover:scale-105 shadow-2xl">
+            Teklif İste
+        </button>
+    </form>
+</section>
+
+<footer class="bg-zbk-surface py-10 border-t-2 border-zbk-secondary">
+    <div class="max-w-6xl mx-auto px-5 text-center">
         
-        <div class="flex justify-center space-x-6 mb-3">
+        <div class="mb-6 text-white/80">
+            <p class="text-lg font-semibold text-zbk-primary mb-2">İletişim Bilgileri</p>
             
-            <a href="https://www.instagram.com/icmimarzbk/" target="_blank" 
-               class="text-zbk-primary text-3xl transition duration-300 transform hover:scale-125 hover:text-zbk-secondary hover:-translate-y-2">
-                <i class="fab fa-instagram"></i>
+            <p class="flex items-center justify-center text-sm md:text-base mb-1">
+                <i class="fas fa-map-marker-alt text-zbk-secondary mr-2"></i>
+                Söğütlü Mah. Bilge Cad. No:2 D:1 Söğütlü/Trabzon
+            </p>
+            
+           <p class="flex items-center justify-center text-sm md:text-base">
+    <i class="fas fa-phone-alt text-zbk-secondary mr-2"></i>
+    <a href="tel:05321372343" class="hover:text-zbk-primary transition duration-300">
+        0 (532) 137 23 43
+    </a>
+</p>
+
+        <div class="flex justify-center space-x-4 mb-8">
+            
+            <a href="https://www.linkedin.com/in/zeynep-bahar-kul-9564b0367/" target="_blank" class="h-12 w-12 flex items-center justify-center rounded-full border-2 border-zbk-primary text-zbk-primary transition duration-500 hover:bg-zbk-primary hover:text-zbk-surface transform hover:-translate-y-1">
+                <i class="fab fa-linkedin-in text-xl"></i>
             </a>
             
-            <a href="https://www.linkedin.com/in/zeynep-bahar-kul-9564b0367/" target="_blank" 
-               class="text-zbk-primary text-3xl transition duration-300 transform hover:scale-125 hover:text-zbk-secondary hover:-translate-y-2">
-                <i class="fab fa-linkedin-in"></i>
+            <a href="https://www.instagram.com/icmimarzbk/" target="_blank" class="h-12 w-12 flex items-center justify-center rounded-full border-2 border-zbk-primary text-zbk-primary transition duration-500 hover:bg-zbk-primary hover:text-zbk-surface transform hover:-translate-y-1">
+                <i class="fab fa-instagram text-xl"></i>
             </a>
-
+            
         </div>
         
-        <p>&copy; 2024 ZBK İç Mimarlık.Tüm Hakları Saklıdır.</p>
-    </footer>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        <p class="text-xs text-white/50 pt-5 border-t border-zbk-subtle-dark">
+            &copy; 2024 ZBK İç Mimarlık.Tüm Hakları Saklıdır.
+        </p>
+        
+    </div>
+</footer>
 
-            const getCssVariable = (name) => {
-                const colors = tailwind.config.theme.extend.colors;
-                if (name === '--color-primary') return colors['zbk-primary'];
-                if (name === '--color-secondary') return colors['zbk-secondary'];
-                return 'white'; // varsayılan
-            };
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Tüm detay bölümlerini seçin (id'si "-detay" ile biten her şey)
+    const detayBolumleri = document.querySelectorAll('[id$="-detay"]');
 
-            const primaryColor = getCssVariable('--color-primary');
-            const secondaryColor = getCssVariable('--color-secondary');
+    // Başlangıçta tüm detay bölümlerini gizle
+    detayBolumleri.forEach(bolum => {
+        bolum.style.display = 'none';
+    });
 
-            // 1. Smooth Scroll Özelliği
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
+    // Tüm tetikleyici (trigger) kartlarını seçin (id'si "-trigger" ile biten her şey)
+    const triggerlar = document.querySelectorAll('[id$="-trigger"]');
 
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                });
+    // Her bir tetikleyiciye tıklama olayı ekleyin
+    triggerlar.forEach(trigger => {
+        trigger.addEventListener('click', function() {
+            // Tıklanan kartın ID'sini al (Örnek: proje-2-trigger)
+            const triggerId = this.id;
+            
+            // Açılacak detayın ID'sini hesapla (Örnek: proje-2-detay)
+            const hedefId = triggerId.replace('-trigger', '-detay');
+            
+            const hedefBolum = document.getElementById(hedefId);
+
+            // Tıklamadan önce, tüm detay bölümlerini gizle (Tüm pencereleri kapat)
+            detayBolumleri.forEach(bolum => {
+                bolum.style.display = 'none';
             });
 
-            // 2. İletişim Formu Doğrulama
-            const contactForm = document.getElementById('contactForm');
-            const formMessage = document.getElementById('form-message');
-
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault(); 
-
-                    const name = document.getElementById('name').value.trim();
-                    const email = document.getElementById('email').value.trim();
-                    const message = document.getElementById('message').value.trim();
-                    
-                    formMessage.textContent = ''; 
-                    formMessage.style.display = 'block';
-
-                    if (name === "" || email === "" || message === "") {
-                        formMessage.textContent = 'Lütfen tüm alanları eksiksiz doldurunuz.';
-                        formMessage.style.color = secondaryColor; 
-                        return; 
-                    }
-
-                    formMessage.textContent = 'Mesajınız başarıyla iletildi! En kısa sürede size dönüş yapacağız.';
-                    formMessage.style.color = primaryColor;
-                    
-                    contactForm.reset(); 
-                });
+            // Hedeflenen detayı göster (Sadece tıklanan projeyi aç)
+            if (hedefBolum) {
+                hedefBolum.style.display = 'block';
+                // Açılan bölüme yumuşak kaydırma (scroll)
+                hedefBolum.scrollIntoView({ behavior: 'smooth' });
             }
         });
-    </script>
+    });
+});
+</script>
+
 </body>
 </html>
